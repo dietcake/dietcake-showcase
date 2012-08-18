@@ -1,4 +1,10 @@
 <?php
+/**
+ * Standard router for DietCake
+ *
+ * @license MIT License
+ * @author Tatsuya Tsuruoka <http://github.com/ttsuruoka>
+ */
 function url($url = '', $params = array())
 {
     $query = http_build_query($params);
@@ -33,6 +39,6 @@ function url($url = '', $params = array())
     } else {
         $url = APP_BASE_PATH . $url . $query;
     }
+
     return $url;
 }
-
