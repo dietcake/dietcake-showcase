@@ -4,6 +4,7 @@
  *
  * @license MIT License
  * @author Tatsuya Tsuruoka <http://github.com/ttsuruoka>
+ * @link https://github.com/dietcake/dietcake-showcase
  */
 function url($url = '', $params = array())
 {
