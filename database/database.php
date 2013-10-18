@@ -9,7 +9,7 @@
 
 class DB extends SimpleDBI
 {
-    public static function getConnectSetting($destination = null)
+    public static function getConnectSettings($destination = null)
     {
         if (is_null($destination)) {
             $dsn = DB_DSN;
