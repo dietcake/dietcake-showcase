@@ -8,3 +8,10 @@ $ echo "require_once __DIR__ . '/google.php';" >> YOURPROJECT/config/core.php
 $ cd YOURPROJECT
 $ composer require google/apiclient
 ```
+
+# File list
+
+- controllers/google_auth_controller.php
+- models/google_auth.php
+- config/google.php
+
