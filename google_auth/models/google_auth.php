@@ -42,7 +42,7 @@ class GoogleAuth
     public static function verify($code)
     {
         if (!$code) {
-            throw new AuthDeniedException();
+            throw new AppException('Auth denied');
         }
 
         $client = self::getClient();
@@ -54,7 +54,7 @@ class GoogleAuth
         $user = $oauth2->userinfo->get();
 
         if (!self::isAllowed($user)) {
-            throw new PermissionDeniedException();
+            throw new AppException('Permission Denied');
         }
 
         $email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);

@@ -17,15 +17,7 @@ class GoogleAuthController extends AppController
     public function callback()
     {
         $code = Param::get('code');
-        try {
-            $result = GoogleAuth::verify($code);
-        } catch (AuthDeniedException $e) {
-            $this->redirect('/');
-            return;
-        } catch (PermissionDeniedException $e) {
-            $this->render('error/permission');
-            return;
-        }
+        $result = GoogleAuth::verify($code);
 
         $user = User::create($result['identity'], $result['token']);
         Session::setId($user->id);
