@@ -19,8 +19,11 @@ class GoogleAuthController extends AppController
         $code = Param::get('code');
         $result = GoogleAuth::verify($code);
 
+        // @TODO $result['identify'] と、 $result['token'] を元にユーザーを作ってください
+        /*
         $user = User::create($result['identity'], $result['token']);
         Session::setId($user->id);
+        */
 
         $url = Session::get('redirect', '/');
         Session::delete('redirect');
